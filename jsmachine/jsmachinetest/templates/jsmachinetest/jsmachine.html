@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #t1{
+            border: 2px grey bold;
+            background-color: rgb(147, 145, 147);
+        }
+    </style>
+</head>
+<body>
+    <table id="t1" align="center">
+        <tr>
+            <th>APPLICATION</th>
+        </tr>
+        <tr>
+            <td><label for="">Name :</label></td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td><label for="">Maths :</label></td>
+            <td><input type="text" id="maths"></td>
+        </tr>
+        <tr>
+            <td><label for="">Chemistry :</label></td>
+            <td><input type="text" id="chemistry"></td>
+        </tr>
+        <tr>
+            <td><label for="">Physics :</label></td>
+            <td><input type="text" id="physics"></td>
+        </tr>
+        <tr>
+ <td><label for="">Biology :</label></td>
+            <td><input type="text" id="biology"></td>
+        </tr>
+        <tr>
+            <td align="center"><button onclick="submission()">submit</button></td>
+        </tr>
+        <tr><td><span id="span1"></span></td></tr>
+    </table>
+    
+    
+
+    <script>
+        function submission() {
+            var math = Number(document.getElementById('maths').value)
+            var chem = Number(document.getElementById('chemistry').value)
+            var phy = Number(document.getElementById('physics').value)
+            var bio = Number(document.getElementById('biology').value)
+            span1 = document.getElementById('span1')
+
+            var result = ((math + chem + phy + bio)/ 100) * 100
+            
+            if (result >= 45) {
+
+            span1.innerHTML = "You are eligible for Higher Studies"
+               document.getElementById('span1').style.color  = "green"
+            }
+            else{
+                span1.innerHTML = "You are not eligible for Higher Studies"
+               document.getElementById('span1').style.color  = "red"
+            }
+
+
+        }
+    </script>
+</body>
+</html>
